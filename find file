@@ -1,0 +1,53 @@
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class FileSearch {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите путь к каталогу для поиска файлов: ");
+        String directoryPath = scanner.nextLine();
+
+        System.out.print("Введите часть имени файла: ");
+        String fileNamePart = scanner.nextLine();
+
+        List<String> foundFiles = searchFiles(new File(directoryPath), fileNamePart);
+
+        if (foundFiles.isEmpty()) {
+            System.out.println("Файлы не найдены.");
+        } else {
+            System.out.println("Найденные файлы:");
+            for (String foundFile : foundFiles) {
+                System.out.println(foundFile);
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static List<String> searchFiles(File directory, String fileNamePart) {
+        List<String> result = new ArrayList<>();
+
+        if (directory.isDirectory()) {
+            File[] files = directory.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    if (file.isDirectory()) {
+                        // Рекурсивный вызов для поиска внутри подкаталогов
+                        result.addAll(searchFiles(file, fileNamePart));
+                    } else {
+                        // Поиск файла по части имени
+                        if (file.getName().contains(fileNamePart)) {
+                            result.add(file.getAbsolutePath());
+                        }
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+}
