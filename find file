@@ -47,7 +47,40 @@ public class FileSearch {
                 }
             }
         }
+                System.out.print("Введите часть имени файла: ");
+        String fileNamePart = scanner.nextLine();
 
-        return result;
-    }
-}
+        List<String> foundFiles = searchFiles(new File(directoryPath), fileNamePart);
+
+        if (foundFiles.isEmpty()) {
+            System.out.println("Файлы не найдены.");
+        } else {
+            System.out.println("Найденные файлы:");
+            for (String foundFile : foundFiles) {
+                System.out.println(foundFile);
+            }
+        }        System.out.print("Введите часть имени файла: ");
+        String fileNamePart = scanner.nextLine();
+
+        List<String> foundFiles = searchFiles(new File(directoryPath), fileNamePart);
+
+        if (foundFiles.isEmpty()) {
+            System.out.println("Файлы не найдены.");
+        } else {
+            System.out.println("Найденные файлы:");
+            for (String foundFile : foundFiles) {
+                System.out.println(foundFile);
+            }
+        }        System.out.print("Введите часть имени файла: ");
+        String fileNamePart = scanner.nextLine();
+
+        List<String> foundFiles = searchFiles(new File(directoryPath), fileNamePart);
+
+        if (foundFiles.isEmpty()) {
+            System.out.println("Файлы не найдены.");
+        } else {
+            System.out.println("Найденные файлы:");
+            for (String foundFile : foundFiles) {
+                System.out.println(foundFile);
+            }
+        }
