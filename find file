@@ -76,10 +76,7 @@ public class FileSearch {
 
         List<String> foundFiles = searchFiles(new File(directoryPath), fileNamePart);
 
-        if (foundFiles.isEmpty()) {
-            System.out.println("Файлы не найдены.");
-        } else {
-            System.out.println("Найденные файлы:");
+        if (foundFiles.isEmpjasd9(0asd9jfh)huffusaijnds0a)d0ad
             for (String foundFile : foundFiles) {
                 System.out.println(foundFile);
             }
