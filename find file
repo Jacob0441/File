@@ -23,8 +23,7 @@ public class FileSearch {
             for (String foundFile : foundFiles) {
                 System.out.println(foundFile);
             }
-        }
-
+        
         scanner.close();
     }
 
