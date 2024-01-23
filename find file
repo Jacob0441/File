@@ -36,12 +36,7 @@ public class FileSearch {
                 for (File file : files) {
                     if (file.isDirectory()) {
                         // Рекурсивный вызов для поиска внутри подкаталогов
-                        result.addAll(searchFiles(file, fileNamePart));
-                    } else {
-                        // Поиск файла по части имени
-                        if (file.getName().contains(fileNamePart)) {
-                            result.add(file.getAbsolutePath());
-                        }
+                        result.a
                     }
                 }
             }
