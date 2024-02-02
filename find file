@@ -38,6 +38,15 @@ public class FileSearch {
                         // Рекурсивный вызов для поиска внутри подкаталогов
                         result.a
                     }
+        List<String> foundFiles = searchFiles(new File(directoryPath), fileNamePart);
+
+        if (foundFiles.isEmpty()) {
+            System.out.println("Файлы не найдены.");
+        } else {
+            System.out.println("Найденные файлы:");
+            for (String foundFile : foundFiles) {
+                System.out.println(foundFile);
+            }
                 }
             }
         }
