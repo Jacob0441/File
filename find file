@@ -11,11 +11,6 @@ public class FileSearch {
         System.out.print("Введите путь к каталогу для поиска файлов: ");
         String directoryPath = scanner.nextLine();
 
-        System.out.print("Введите часть имени файла: ");
-        String fileNamePart = scanner.nextLine();
-
-        List<String> foundFiles = searchFiles(new File(directoryPath), fileNamePart);
-
         if (foundFiles.isEmpty()) {
             System.out.println("Файлы не найдены.");
         } else {
